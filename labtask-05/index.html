@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		body
+		{
+			background:#f4f4f4;
+			font-family:Arial,helvetica,sans-serif;
+			font-size:16px;
+			font-weight:normal;
+			line-height:1.6em;
+			margin:2px; 
+			}
+		.container
+		{
+			text-align: center;
+			width: 35%;
+			padding: 20px;
+			/*padding-left:60px;*/
+			margin: auto;
+			background-color: white;
+		}
+		tr label
+		{
+			float: left;
+			clear: left;
+		}
+		tr input, tr select
+		{
+			float: left;
+			clear: left;
+		}
+		h1
+		{
+			position: relative;
+			top:0px;
+
+		}
+	
+	</style>
+	<title>Sign Up</title>
+</head>
+<body>
+	<div class= "container">
+		<h1>Sign Up Form</h1>
+		<form class = "forms" name = "myform" action="register_try.php" method="POST" >
+			<table>
+
+				<tr>
+					<td>
+						<label>Roll No:</label>
+					</td>
+					<td>
+						<input type="text" name="RollNo" id="rollno" placeholder="17P-6075" required>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<label>Name:</label>
+					</td>
+					<td>
+						<input type="text" name="Name" id="name" placeholder="halcyoona" required>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Father Name:</label>
+					</td>
+					<td>
+						<input type="text" name="FName" id="fatherName" placeholder="halcyoona's Father" required>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Gender</label>
+					</td>
+					<td>
+						<select name="sGender" required>
+							<option value="Male">Male</option>
+							<option value="Female">Female</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Date of Birth:</label>
+					</td>
+					<td>
+						<input type="date" name="birthday" value="2000-01-01" id="dofb">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Contact:</label>
+					</td>
+					<td>
+						<input type="text" name="Contact" id="Contact" placeholder="03xx-xxxxxxx" required>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Email:</label>
+					</td>
+					<td>
+						<input type="email" name="email" placeholder="halcyoona@gmail.com" id="email" required>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Address:</label>
+					</td>
+					<td>
+						<textarea name="Address" rows="12" cols="25" placeholder="Address" id="address" required></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>     </label>
+					</td>
+					<td colspan="2" align="right">
+						<input type="submit" value="Register">
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<?php
+							if (isset($_GET["Message"])) {
+								echo $_GET["Message"];
+								unset($_GET["Message"]);
+							}
+						?>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	
+</body>
+</html>
